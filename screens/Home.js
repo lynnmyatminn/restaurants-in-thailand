@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, StyleSheet, StatusBar, Platform, View, ScrollView } from 'react-native';
-import HeaderTabs from '../components/HeaderTabs';
-import SearchBar from '../components/SearchBar';
-import Categories from '../components/Categories';
-import RestaurantItems, { localRestaurants } from '../components/RestaurantItems';
+import HeaderTabs from '../components/home/HeaderTabs';
+import SearchBar from '../components/home/SearchBar';
+import Categories from '../components/home/Categories';
+import RestaurantItems, { localRestaurants } from '../components/home/RestaurantItems';
+import { Divider } from 'react-native-elements';
+import BottomTabs from '../components/home/BottomTabs';
 
 // const ACCESS_TOKEN = "e807f1fcf82d132f9bb018ca6738a19f";
 
@@ -47,6 +49,8 @@ export default function Home() {
                 <Categories />
                 <RestaurantItems restaurantData={restaurantData} />
             </ScrollView>
+            {/* <Divider width={1} /> */}
+            <BottomTabs />
         </SafeAreaView>
     );
 }
