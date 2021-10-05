@@ -9,7 +9,7 @@ import BottomTabs from '../components/home/BottomTabs';
 
 // const ACCESS_TOKEN = "e807f1fcf82d132f9bb018ca6738a19f";
 
-export default function Home() {
+export default function Home({ navigation }) {
 
     const [restaurantData, setRestaurantData] = useState(localRestaurants);
 
@@ -47,7 +47,7 @@ export default function Home() {
             </View>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Categories />
-                <RestaurantItems restaurantData={restaurantData} />
+                <RestaurantItems restaurantData={restaurantData} navigation={navigation} />
             </ScrollView>
             {/* <Divider width={1} /> */}
             <BottomTabs />

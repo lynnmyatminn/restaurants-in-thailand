@@ -57,7 +57,20 @@ const styles = StyleSheet.create({
 export default function MenuItems() {
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
-            {
+            {foods.map((food, index) => (
+                <View key={index}>
+                    <View style={styles.menuItemStyle}>
+                        <FoodInfo food={food} />
+                        <FoodImage food={food} />
+
+
+                    </View>
+                    <Divider width={0.5} orientation="vertical" style={{
+                        marginHorizontal: 20
+                    }} />
+                </View>
+            ))}
+            {/* {
                 foods.map((food, index) => (
 
 
@@ -66,12 +79,15 @@ export default function MenuItems() {
                             <FoodInfo food={food} />
                             <FoodImage food={food} />
                         </View>
-                        <Divider width={0.5} orientation="vertical" />
+                        <Divider width={0.5} orientation="vertical" style={{
+                            marginHorizontal: 20
+                        }} />
                     </View>
                 ))
-            }
+            } */}
+
         </ScrollView>
-    )
+    );
 }
 
 const FoodInfo = (props) => (
