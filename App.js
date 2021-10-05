@@ -6,7 +6,7 @@ import RestaurantDetail from './screens/RestaurantDetail';
 
 export default function App() {
   return (
-    // <Home />
-    <RestaurantDetail />
+    <Home />
+    // <RestaurantDetail />
   );
 }
