@@ -23,17 +23,23 @@ export default function RestaurantItems({ navigation, ...props }) {
 
             {
                 props.restaurantData.map((item, index) => (
-                    <TouchableOpacity activeOpacity={1} style={{
+                    <TouchableOpacity key={index} activeOpacity={1} style={{
                         marginBottom: 30
                     }}
                         onPress={() =>
-                            navigation.navigate("RestaurantDetail"),
-                        {
-
-                        }
+                            navigation.navigate("RestaurantDetail",
+                                {
+                                    name: item.name,
+                                    image: item.image,
+                                    province: item.province,
+                                    rate: item.rate,
+                                    category: item.category,
+                                    detail: item.detail,
+                                    // description: item.description
+                                })
                         }
                     >
-                        <View key={index} style={{
+                        <View style={{
                             marginTop: 5,
                             padding: 15,
                             backgroundColor: "white"

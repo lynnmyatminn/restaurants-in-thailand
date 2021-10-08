@@ -4,16 +4,26 @@ https://api.halalthai.com/demo
 
 - Navigation
 
-    npm install @react-navigation/native
+    npm i @react-navigation/native
     or 
     yarn add @react-navigation/native
 
-    npm install @react-navigation/stack
+    npm i @react-navigation/stack
     or
     yarn add @react-navigation/stack
 
 - Back & Forth Swipe Functionality
 
-    npm install react-native-gesture-handler
+    npm i react-native-gesture-handler
     or
     yarn add react-native-gesture-handler
+
+- Checkbox Functionality
+
+    npm i react-native-bouncy-checkbox
+
+- Typescript Library
+    npm i tslib
+
+- Redux
+    npm i react-redux

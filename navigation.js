@@ -9,7 +9,7 @@ export default function RootNavigation() {
     const Stack = createStackNavigator();
 
     const screenOptions = {
-        headerShown: false,
+        headerShown: true,
     }
 
     return (

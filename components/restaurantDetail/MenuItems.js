@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 import { Divider } from 'react-native-elements';
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
 const foods = [
     {
@@ -44,48 +45,45 @@ const foods = [
 
 const styles = StyleSheet.create({
     menuItemStyle: {
-        flexDirection: "row",
+        // flexDirection: "row",
         justifyContent: "space-between",
-        margin: 20
+        margin: 20,
     },
+
     titleStyle: {
         fontSize: 19,
-        fontWeight: "600"
-    }
-})
+        fontWeight: "600",
+    },
+});
+
 
 export default function MenuItems() {
     return (
+
         <ScrollView showsVerticalScrollIndicator={false}>
             {foods.map((food, index) => (
                 <View key={index}>
                     <View style={styles.menuItemStyle}>
+                        {/* {hideCheckbox ? (
+                            <></>
+                        ) : ( */}
+                        <BouncyCheckbox
+                            iconStyle={{ borderColor: "lightgray", borderRadius: 0 }}
+                            fillColor="green"
+                        // isChecked={isFoodInCart(food, cartItems)}
+                        // onPress={(checkboxValue) => selectItem(food, checkboxValue)}
+                        />
+                        {/* )} */}
                         <FoodInfo food={food} />
                         <FoodImage food={food} />
-
-
                     </View>
-                    <Divider width={0.5} orientation="vertical" style={{
-                        marginHorizontal: 20
-                    }} />
+                    <Divider
+                        width={0.5}
+                        orientation="vertical"
+                        style={{ marginHorizontal: 20 }}
+                    />
                 </View>
             ))}
-            {/* {
-                foods.map((food, index) => (
-
-
-                    <View key={index}>
-                        <View style={styles.menuItemStyle}>
-                            <FoodInfo food={food} />
-                            <FoodImage food={food} />
-                        </View>
-                        <Divider width={0.5} orientation="vertical" style={{
-                            marginHorizontal: 20
-                        }} />
-                    </View>
-                ))
-            } */}
-
         </ScrollView>
     );
 }
